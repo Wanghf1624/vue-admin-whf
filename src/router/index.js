@@ -81,27 +81,6 @@ export const constantRoutes = [
       }
     ]
   },
-  {
-    path: '/system configuration',
-    component: Layout,
-    meta: { title: '系统配置', icon: 'user' },
-    children: [
-      {
-        path: 'List',
-        name: 'program ManagementList',
-        component: () => import('@/pages/system configuration/program management/List'),
-        meta: { title: '栏目管理', icon: 'user' }
-      },
-       {
-        path: 'List',
-        name: 'product ManagementList',
-        component: () => import('@/pages/system configuration/product management/List'),
-        meta: { title: '系统配置', icon: 'user' }
-      
-      },
-      
-    ]
-  },
 
 
   // 404 page must be placed at the end !!!
