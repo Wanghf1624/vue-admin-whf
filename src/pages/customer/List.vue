@@ -7,7 +7,8 @@
         <!-- 表格 -->
         <el-table :data="customers">
             <el-table-column prop="id" label="编号"></el-table-column>
-            <el-table-column prop="realname" label="姓名"></el-table-column>
+            <el-table-column prop="username" label="姓名"></el-table-column>
+            <el-table-column prop="realname" label="真实姓名"></el-table-column>
             <el-table-column prop="telephone" label="联系方式"></el-table-column>
             <el-table-column label="操作">
                 <template v-slot="slot">
@@ -100,7 +101,8 @@ export default {
         },
         toDeleteHandler(id){
             //确认
-         this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+          alert(id);
+          this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
           confirmButtonText: '确定',
           cancelButtonText: '取消',
           type: 'warning'
@@ -120,11 +122,12 @@ export default {
         })
 
         },
-        toUpdateHandler(){
+        toUpdateHandler(row){
             this.title="修改员工信息";
-            this.visible=true;
+            
             //模态框的表单中显示当前行的数据
-            this.form = row;
+            this.visible=true;
+            this.form=row;
             
         },
         closeModalHandler(){

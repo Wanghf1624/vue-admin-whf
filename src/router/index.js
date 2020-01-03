@@ -81,7 +81,27 @@ export const constantRoutes = [
       }
     ]
   },
-
+  {
+    path: '/system configuration',
+    component: Layout,
+    meta: { title: '系统配置', icon: 'user' },
+    children: [
+      {
+        path: 'List',
+        name: 'ColumnList',
+        component: () => import('@/pages/system configuration/column/List'),
+        meta: { title: '栏目管理', icon: 'user' }
+      },
+       {
+        path: 'List',
+        name: 'ProductList',
+        component: () => import('@/pages/system configuration/product/List'),
+        meta: { title: '系统配置', icon: 'user' }
+      
+      },
+      
+    ]
+  },
 
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
